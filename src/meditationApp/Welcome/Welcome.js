@@ -1,10 +1,15 @@
-import React from 'react';
+import React, { Fragment } from 'react';
+import './Welcome.css';
+import meditate from './meditate.jpg';
 
 
 const Welcome  = () => {
 
     return (
-        <h1>Welcome to the Meditation App</h1>
+        <Fragment>
+          <h1>Welcome to the Meditation App</h1>
+          <img src={meditate}></img>
+        </Fragment>
     )
 }
 
