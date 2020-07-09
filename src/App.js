@@ -1,25 +1,32 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import React, { Fragment } from 'react';
+import { BrowserRouter as Router, Route, Redirect, Switch } from 'react-router-dom';
+import Welcome from './meditationApp/Welcome/Welcome';
+import WhyMeditation from './meditationApp/WhyMeditation/WhyMeditation';
+import Meditate from './meditationApp/Meditate/Meditate';
 
-function App() {
+
+const App = () => {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <Fragment>
+    <Router>
+      <main>
+        <Switch>
+          <Route path="/" exact>
+            <Welcome />
+          </Route>
+          <Route path="/whymeditation" exact>
+            <WhyMeditation />
+          </Route>
+          <Route path="/meditate" exact>
+            <Meditate />
+          </Route>
+          <Redirect to="/">
+
+          </Redirect>
+        </Switch>
+      </main>
+    </Router>
+    </Fragment>
   );
 }
 
